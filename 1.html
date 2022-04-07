@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+</head>
+<body>
+    <div class="img">
+        <img src="img/1.png">
+    </div>
+    <input type="text" id="caixinha1" placeholder="x1">
+    <input type="text" id="caixinha2" placeholder="x2">
+    <input type="text" id="caixinha3" placeholder="y1">
+    <input type="text" id="caixinha4" placeholder="y2">
+    <div class="botao">
+        <input type="button" id="botaozinho" onclick="calcular()" value="calcular">
+    </div>
+    <h3 id="result"></h3>
+    <style>
+        .img{
+            text-align: center;
+            margin: 30px auto;
+        }
+        input[type="text"]{
+            display: block;
+            margin: 15px auto;
+            border: 1px solid black;
+            border-radius: 30px;
+            outline: none;
+            width: 150px;
+            text-align: center;
+            height: 40px;
+            transition: .5s all;
+        }
+        input[type="text"]:hover,input[type="text"]:focus,input[type="button"]:hover,input[type="button"]:focus{
+            border-color: #8a2be2;
+        }
+        input[type="button"]{
+            border-radius: 30px;
+            outline: none;
+            border: 3px solid #8a2be2;
+            background-color: #8a2be2;
+            color: white;
+            padding: 15px 30px;
+            margin: auto;
+            font-weight: bold;
+            transition: .5s all;
+        }
+        input[type="button"]:hover{
+            color: #8a2be2;
+            background-color: white;
+        }
+        .botao{
+            text-align: center;
+        }
+        #botaozinho:hover{
+            cursor: pointer;
+        }
+        h3{
+            text-align: center;
+        }
+    </style>
+    <script>
+        function calcular(){
+            var w = document.getElementById("caixinha1").value;
+            var x = document.getElementById("caixinha2").value;
+            var y = document.getElementById("caixinha3").value;
+            var z = document.getElementById("caixinha4").value;
+            var result = document.getElementById("result");
+            var botao = document.getElementById("botaozinho");
+            var resultado = Math.sqrt((w-x)**2+(y-z)**2);
+            result.textContent = `d = ${resultado}`;
+        }
+    </script>
+</body>
+</html>

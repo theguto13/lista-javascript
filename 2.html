@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+</head>
+<body>
+    <div class="img">
+        <img src="img/2.png">
+    </div>
+    <input type="text" id="caixinha1" placeholder="A">
+    <input type="text" id="caixinha2" placeholder="B">
+    <input type="text" id="caixinha3" placeholder="C">
+    <div class="botao">
+        <input type="button" id="botaozinho" onclick="calcular()" value="calcular">
+    </div>
+    <h3 id="result"></h3>
+    <style>
+        .img{
+            text-align: center;
+            margin: 30px auto;
+        }
+        input[type="text"]{
+            display: block;
+            margin: 15px auto;
+            border: 1px solid black;
+            border-radius: 30px;
+            outline: none;
+            width: 150px;
+            text-align: center;
+            height: 40px;
+            transition: .5s all;
+        }
+        input[type="text"]:hover,input[type="text"]:focus,input[type="button"]:hover,input[type="button"]:focus{
+            border-color: #8a2be2;
+        }
+        input[type="button"]{
+            border-radius: 30px;
+            outline: none;
+            border: 3px solid #8a2be2;
+            background-color: #8a2be2;
+            color: white;
+            padding: 15px 30px;
+            margin: auto;
+            font-weight: bold;
+            transition: .5s all;
+        }
+        input[type="button"]:hover{
+            color: #8a2be2;
+            background-color: white;
+        }
+        .botao{
+            text-align: center;
+        }
+        #botaozinho:hover{
+            cursor: pointer;
+        }
+        h3{
+            text-align: center;
+        }
+    </style>
+    <script>
+        function calcular(){
+            var A = document.getElementById("caixinha1").value;
+            var B = document.getElementById("caixinha2").value;
+            var C = document.getElementById("caixinha3").value;
+            var S = (B+C)**2;
+            var R = (A+B)**2;
+            var result = document.getElementById("result");
+            var botao = document.getElementById("botaozinho");
+            var resultado = (R+S)/2;
+            result.textContent = `D = ${resultado}`;
+        }
+    </script>
+</body>
+</html>
